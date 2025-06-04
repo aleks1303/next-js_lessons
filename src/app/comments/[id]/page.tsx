@@ -1,11 +1,15 @@
 import React from 'react';
 import {ApiService} from "@/services/api.service";
+import {Metadata} from "next";
 
 type PropsComment = {
     params: {id:string}
 }
-const generateMetadata = ({params}:PropsComment) => {
-
+export const generateMetadata = async ({params}:PropsComment): Promise<Metadata> => {
+const {id} = await params
+    return {
+    title: `Comment ${id}`
+    }
 }
 
 const CommentsByIdPage= async ({params}: PropsComment) => {

@@ -1,8 +1,16 @@
 import React from 'react';
 import {ApiService} from "@/services/api.service";
+import {Metadata} from "next";
 
 type PropsPost = {
     params: {id:string}
+}
+
+export const generateMetadata = async ({params}:PropsPost): Promise<Metadata> => {
+    const {id} = await params
+    return {
+        title: `Post ${id}`
+    }
 }
 
 const PostByIdPage = async ({params}:PropsPost) => {
