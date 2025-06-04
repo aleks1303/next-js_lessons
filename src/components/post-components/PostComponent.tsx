@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {IPosts} from "@/models/IPosts";
+import Link from "next/link";
 
 type PropsPost = {
     item: IPosts
@@ -8,8 +9,7 @@ type PropsPost = {
 const PostComponent:FC<PropsPost> = ({item}) => {
     return (
         <div>
-            <p>{item.id}. {item.title}</p>
-            <p>{item.body}</p>
+            <Link href={`/posts/${item.id}`}><p>{item.id}. {item.title}</p></Link>
         </div>
     );
 };

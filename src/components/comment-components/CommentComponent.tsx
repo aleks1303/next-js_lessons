@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {IComments} from "@/models/IComments";
+import Link from "next/link";
 
 type PropsComment = {
     item: IComments
@@ -8,8 +9,7 @@ type PropsComment = {
 const CommentComponent:FC<PropsComment> = ({item}) => {
     return (
         <div>
-           <p>{item.id}. {item.name}: {item.email}</p>
-            <p>{item.body}</p>
+            <Link href={`/comments/${item.id}`}><p>{item.id}. {item.name}</p></Link>
         </div>
     );
 };

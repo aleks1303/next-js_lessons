@@ -16,5 +16,18 @@ export const ApiService = {
     getAllComments: async (): Promise<IComments[]> => {
         return await fetch(`${baseUrl}/comments`)
             .then((response) => response.json())
+    },
+    getCommentById: async (id:string): Promise<IComments> => {
+      return await fetch(`${baseUrl}/comments/${id}`)
+            .then((response) => response.json())
+    },
+    getUserById: async (id:string):Promise<IUsers> => {
+      return await fetch(`${baseUrl}/users/${id}`)
+          .then((response) => response.json())
+    },
+    getPostById: async (id:string):Promise<IPosts> => {
+        return await fetch(`${baseUrl}/posts/${id}`)
+            .then((response) => response.json())
+
     }
 }
