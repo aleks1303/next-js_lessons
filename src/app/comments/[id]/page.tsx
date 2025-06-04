@@ -4,6 +4,9 @@ import {ApiService} from "@/services/api.service";
 type PropsComment = {
     params: {id:string}
 }
+const generateMetadata = ({params}:PropsComment) => {
+
+}
 
 const CommentsByIdPage= async ({params}: PropsComment) => {
     const {id} = await params
