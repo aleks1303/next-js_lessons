@@ -168,7 +168,8 @@ db.prepare(`
     CREATE TABLE IF NOT EXISTS meals
     (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        title TEXT
+        title TEXT,
+        creator TEXT
     )
 `).run();
 
@@ -176,7 +177,8 @@ async function initData() {
     const stmt = db.prepare(`
         INSERT INTO meals
         VALUES (null,
-                @title
+                @title,
+                @creator
                )
         
     `);
