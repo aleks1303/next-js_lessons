@@ -1,6 +1,20 @@
+'use client'
+
 import Image from "next/image";
+import {useEffect} from "react";
+
+// CSR - Client Side Rendering
+// використовується 'use client' для того, щоб компонент вважався клієнтським
+// тільки тоді можна використовувати різноманітні хуки з react
+// всі підрівні будуть також клієнтськими
+// тому краще робити окремі клієнтські компоненти та вставляти їх в page
 
 export default function Home() {
+  useEffect(() => {
+    console.log(localStorage);
+  },[])
+
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
