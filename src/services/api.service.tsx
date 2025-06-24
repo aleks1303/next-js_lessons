@@ -8,7 +8,7 @@ export const apiService = {
         return await fetch(`${baseUrl}/cars`)
             .then((response) => response.json())
     },
-    createCar: async (car: ICarWithoutId) => {
+    createCar: async (car: ICarWithoutId):Promise<ICar> => {
         return await fetch(`${baseUrl}/cars`, {
            method: 'POST',
             headers: {
